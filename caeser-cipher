@@ -1,0 +1,76 @@
+
+print("""                                                                  
+ ,adPPYba, ,adPPYYba,  ,adPPYba, ,adPPYba, ,adPPYYba, 8b,dPPYba,  
+a8"     "" ""     `Y8 a8P_____88 I8[    "" ""     `Y8 88P'   "Y8  
+8b         ,adPPPPP88 8PP"""""""  `"Y8ba,  ,adPPPPP88 88          
+"8a,   ,aa 88,    ,88 "8b,   ,aa aa    ]8I 88,    ,88 88          
+ `"Ybbd8"' `"8bbdP"Y8  `"Ybbd8"' `"YbbdP"' `"8bbdP"Y8 88          
+                                                             
+           88             88                                 
+           ""             88                                 
+                          88                                 
+ ,adPPYba, 88 8b,dPPYba,  88,dPPYba,   ,adPPYba, 8b,dPPYba,  
+a8"     "" 88 88P'    "8a 88P'    "8a a8P_____88 88P'   "Y8  
+8b         88 88       d8 88       88 8PP""""""" 88          
+"8a,   ,aa 88 88b,   ,a8" 88       88 "8b,   ,aa 88          
+ `"Ybbd8"' 88 88`YbbdP"'  88       88  `"Ybbd8"' 88          
+              88                                             
+              88                                    
+""")
+def encrypt():
+    print("We are encrypting")
+    letter = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
+    text = input("Type your message: ").lower()
+    shift = int(input("Type the shift in the numbers: "))
+
+    output =""
+
+    for char in text:
+        if char in letter:
+            prt_idx = letter.index(char) + shift
+            if prt_idx > 25:
+                prt_idx -= 26
+            output += letter[prt_idx]
+            #output.append(letter[prt_idx])
+        else:
+            output += char
+
+    print(output)
+    #print(''.join(output))
+def decrypt():
+    print("We are decrypting")
+    letter = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
+    text = input("Type your message: ").lower()
+    shift = int(input("Type the shift in the numbers: "))
+
+    output =""
+
+    for char in text:
+        if char in letter:
+            prt_idx = letter.index(char) - shift
+            if prt_idx < 0:
+                prt_idx += 26
+            output += letter[prt_idx]
+        #output.append(letter[prt_idx])
+        else:
+            output += char
+
+    print(output)
+    #print(''.join(output))
+
+def ceaser():
+    job = input("You want to Encrypt?[Y/N] :").upper()
+    if job == 'Y':
+        encrypt()
+    else:
+        decrypt()
+    conti =input("You want to continue? [Y/N]:").upper()
+    if conti == 'Y':
+        ceaser()
+    else:
+        print("Bye!!")
+    
+
+ceaser()
+
+        
