@@ -127,8 +127,12 @@ while is_working:
     choice_of_coffee()
     print("\n"*5)
 
+###
+Alternate Steps:
+1. Make a Dictionary of diff coffees(later used as ordered_drink),plus the resources(ingredients) avaialble
+2. To check for sufficient resources:
+  def are_resources_sufficient(ordered_drink): 
+    for item in ordered ingredients:
+      if ordered_ingredients[item] >= resources[item]:
+        print(f"Not enough of {item}")
 
-
-
-
-#Clear the screen after the transaction, show home screen.
